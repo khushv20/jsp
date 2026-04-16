@@ -303,6 +303,148 @@ p {
   margin-top: 40px;
 }
 
+/* ── MY ROLE: TWO-COLUMN AREAS ── */
+.stat-line {
+  font-family: 'Source Serif 4', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1F4E79;
+  border-left: 3px solid #1F4E79;
+  padding: 4px 0 4px 20px;
+  margin: 28px 0 40px;
+  line-height: 1.5;
+}
+
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 40px;
+  margin: 8px 0 40px;
+}
+
+.role-area h3 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1F4E79;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #D4D0CB;
+}
+
+.role-area p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* ── QUESTIONS CALLOUT ── */
+.questions-box {
+  border: 2px solid #1F4E79;
+  background: #1F4E79;
+  color: #FFFFFF;
+  padding: 36px 32px;
+  margin: 8px 0 56px;
+}
+
+.questions-box h3 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+
+.questions-box ol {
+  padding-left: 22px;
+  margin: 0;
+}
+
+.questions-box li {
+  font-size: 16px;
+  line-height: 1.65;
+  margin-bottom: 12px;
+  padding-left: 6px;
+}
+
+.questions-box li:last-child {
+  margin-bottom: 0;
+}
+
+/* ── SUB-SECTION (Design Artifact) ── */
+.sub-heading {
+  font-family: 'Source Serif 4', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1F4E79;
+  margin: 24px 0 20px;
+  padding-top: 24px;
+  border-top: 1px solid #D4D0CB;
+}
+
+/* ── TABLES ── */
+.table-wrapper {
+  overflow-x: auto;
+  margin: 32px 0 8px;
+  border: 1px solid #D4D0CB;
+  background: #FFFFFF;
+}
+
+.table-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1F4E79;
+  margin: 40px 0 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  min-width: 720px;
+}
+
+table th,
+table td {
+  border: 1px solid #D4D0CB;
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.4;
+}
+
+table thead th {
+  background: #1F4E79;
+  color: #FFFFFF;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-color: #1F4E79;
+}
+
+table thead tr.sub-header th {
+  background: #2E5F8F;
+  font-size: 12px;
+  font-weight: 500;
+  color: #FFFFFF;
+  border-color: #2E5F8F;
+}
+
+table tbody td {
+  color: #3A3A3A;
+  background: #FFFFFF;
+}
+
+.table-caption {
+  font-size: 13px;
+  font-style: italic;
+  color: #5A5A5A;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
 /* ── FOOTER ── */
 footer {
   border-top: 1px solid #D4D0CB;
@@ -378,6 +520,23 @@ footer a:hover {
   .outcome-card {
     padding: 24px 20px 24px 24px;
   }
+
+  .role-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .stat-line {
+    font-size: 17px;
+  }
+
+  .questions-box {
+    padding: 28px 22px;
+  }
+
+  .sub-heading {
+    font-size: 21px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -406,6 +565,7 @@ footer a:hover {
   <ul>
     <li><a href="#problem">Problem</a></li>
     <li><a href="#process">Process</a></li>
+    <li><a href="#my-role">My Role</a></li>
     <li><a href="#data-design">Data Design</a></li>
     <li><a href="#outcomes">Outcomes</a></li>
   </ul>
@@ -481,6 +641,135 @@ footer a:hover {
         <p>Jan Soochna Portal launched by the Chief Minister of Rajasthan. The dialogues have continued since. The volume of schemes and information has grown significantly in the years following launch.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- SECTION: MY ROLE -->
+<section id="my-role" class="section-border">
+  <div class="container">
+    <h2>My Role in This Work</h2>
+    <p class="subheading">Phase 2: expanding the portal from 21 schemes to hundreds, and taking disclosure into communities.</p>
+
+    <p>I joined this work in July 2020 as my first assignment after completing my Master of Public Affairs at Brown University. The portal had launched in September 2019 with 21 schemes. My role in Phase 2 was to expand and deepen it: coordinating between civil society JIS teams and government departments, co-designing data formats for new disclosure areas, convening and facilitating Digital Dialogues, and designing the approaches to take information disclosed on the portal into communities and bring their feedback and grievances back into the design process.</p>
+
+    <p class="stat-line">The portal now covers 353 schemes across 117 departments and has been accessed by 298 million people.</p>
+
+    <div class="role-grid">
+      <div class="role-area">
+        <h3>Schemes I worked on</h3>
+        <p>Social security pensions, COVID-19 relief and ex-gratia compensation payments, Building and Other Construction Workers Act disclosures, and mining-related disclosures. I also worked with the Office of the Chief Secretary and the Secretary of IT to draft and issue guidelines for the portal, grounded in social accountability principles and the experience of the dialogues.</p>
+      </div>
+      <div class="role-area">
+        <h3>Community outreach and feedback</h3>
+        <p>After disclosure, I worked with people's campaigns, social movements, and unions to ensure information was actively used. This included community meetings and night camps where I projected the portal onto the walls of schools and health centres using a portable projector, walking communities through what was now visible and how to use it. Their feedback and unresolved grievances were then brought back into the next dialogue to strengthen both disclosure and grievance redress.</p>
+      </div>
+      <div class="role-area">
+        <h3>Facilitating the dialogues</h3>
+        <p>I convened and facilitated multiple Digital Dialogues with civil society representatives (35 to 50 participants), line departments (up to 8 to 10 at a time), and the state IT department. The dialogues were deliberately open: the wider the civil society participation, the stronger the shared ownership of the outcomes across both activists and bureaucrats.</p>
+      </div>
+      <div class="role-area">
+        <h3>What I would do differently</h3>
+        <p>The portal's structure is difficult to navigate on a mobile phone, which is how most users access it. Online-only disclosure is also insufficient. I proposed and designed an on-ground facilitation model at the village level where people would be assisted in reading the information, sharing feedback, and using it to seek accountability. That infrastructure was laid out clearly but stalled due to a lack of administrative and political will. If I were designing it again, I would insist on the facilitation layer being built in from the start, not treated as a separate implementation problem.</p>
+      </div>
+    </div>
+
+    <div class="questions-box">
+      <h3>Three questions that anchored every negotiation</h3>
+      <ol>
+        <li>How will this information help the most marginalised access their entitlements?</li>
+        <li>How will this information increase transparency and accountability of the system?</li>
+        <li>How will this information strengthen participation of the most marginalised in governance?</li>
+      </ol>
+    </div>
+
+    <h3 class="sub-heading">A Design Artifact: COVID-19 Relief Disclosure Formats</h3>
+
+    <p>During the COVID-19 lockdown, I led the co-design of disclosure formats for three channels of state relief: cash transfers to families who lost earning members to COVID-19, dry ration distribution through Anganwadis and schools, and cash transfers to informal workers including street vendors, construction workers, and rickshaw drivers who lost livelihoods during the lockdown.</p>
+
+    <p>The first step was forming a JIS team of civil society volunteers working across these three areas. Together, we met with six line departments including Finance, Labour Welfare, Food and Civil Supplies, Women and Child Development, Education, and Local Self Government to map their existing data systems: what was digitised, to what granularity, and how frequently it was updated.</p>
+
+    <p>The formats below were the output of that process. Each column was negotiated. The government's primary resistance was political: COVID deaths, hunger, and livelihood collapse were sensitive. I anchored those negotiations. The government eventually not only disclosed the requested information but created a dedicated grievance workflow for COVID-related complaints arising from the disclosure. A helpline ran for one year from the date the information went live.</p>
+
+    <p class="table-label">Table 1 &middot; COVID-19 Ex-Gratia Payment Disclosure Format <span style="font-weight:500; letter-spacing:0; text-transform:none; color:#5A5A5A;">(translated from Hindi original)</span></p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th rowspan="2">Serial No.</th>
+            <th rowspan="2">District</th>
+            <th rowspan="2">Panchayat Samiti</th>
+            <th rowspan="2">Gram Panchayat</th>
+            <th rowspan="2">Village</th>
+            <th colspan="6">Eligible Beneficiaries by Category</th>
+            <th rowspan="2">Total Beneficiaries</th>
+            <th rowspan="2">Total Benefited</th>
+            <th rowspan="2">Failed / Rejected Payments</th>
+            <th rowspan="2">Remarks</th>
+          </tr>
+          <tr class="sub-header">
+            <th>BPL</th>
+            <th>State BPL</th>
+            <th>Antyodaya</th>
+            <th>Registered Construction Workers</th>
+            <th>Street Vendors</th>
+            <th>Other Workers &amp; Rickshaw Drivers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>2</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>3</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="table-label">Table 2 &middot; COVID-19 Dry Ration Distribution Disclosure Format</p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th rowspan="2">Name of Beneficiary</th>
+            <th rowspan="2">Date Received</th>
+            <th rowspan="2">Number of Times Received</th>
+            <th rowspan="2">Items Received</th>
+            <th colspan="3">Source</th>
+          </tr>
+          <tr class="sub-header">
+            <th>MLA Fund</th>
+            <th>Private Donor</th>
+            <th>Other</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="table-caption">These formats were co-designed with civil society groups and negotiated with six state government departments during the COVID-19 lockdown in 2020.</p>
   </div>
 </section>
 
