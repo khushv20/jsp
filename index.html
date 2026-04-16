@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jan Soochna Portal: A Case Study</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #FAF9F7;
+  color: #1A1A1A;
+  line-height: 1.7;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #FAF9F7;
+  border-bottom: 1px solid #D4D0CB;
+  z-index: 1000;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+nav a {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #1F4E79;
+}
+
+/* ── LAYOUT ── */
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 96px 0;
+}
+
+/* ── HERO ── */
+.hero {
+  padding: 160px 0 96px;
+  border-bottom: 1px solid #D4D0CB;
+}
+
+.hero h1 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #1F4E79;
+  margin-bottom: 28px;
+  max-width: 780px;
+}
+
+.hero .subtitle {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #3A3A3A;
+  margin-bottom: 32px;
+  max-width: 740px;
+}
+
+.hero .byline {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #1F4E79;
+  text-transform: uppercase;
+}
+
+/* ── SECTIONS ── */
+.section-border {
+  border-bottom: 1px solid #D4D0CB;
+}
+
+h2 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1F4E79;
+  margin-bottom: 8px;
+}
+
+.subheading {
+  font-family: 'Source Serif 4', serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+  color: #3A3A3A;
+  margin-bottom: 32px;
+  max-width: 700px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+.closing-line {
+  font-weight: 600;
+  color: #1F4E79;
+  margin-top: 8px;
+}
+
+/* ── CALLOUT BOXES ── */
+.callout-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 40px 0 32px;
+}
+
+.callout-box {
+  border: 1px solid #1F4E79;
+  padding: 28px 24px;
+  background: #FFFFFF;
+}
+
+.callout-box h3 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1F4E79;
+  margin-bottom: 12px;
+}
+
+.callout-box p {
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+/* ── TIMELINE ── */
+.timeline {
+  margin: 48px 0 0;
+  position: relative;
+  padding-left: 36px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: #1F4E79;
+}
+
+.timeline-step {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeline-step:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-step::before {
+  content: '';
+  position: absolute;
+  left: -36px;
+  top: 8px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #1F4E79;
+  background: #FAF9F7;
+}
+
+.timeline-step .step-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #1F4E79;
+  margin-bottom: 6px;
+}
+
+.timeline-step p {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+/* ── DATA DESIGN CARDS ── */
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin: 40px 0;
+}
+
+.data-card {
+  border: 1px solid #D4D0CB;
+  padding: 28px 24px;
+  background: #FFFFFF;
+}
+
+.data-card h3 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1F4E79;
+  margin-bottom: 12px;
+}
+
+.data-card p {
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+/* ── PRINCIPLE BOX ── */
+.principle-box {
+  border: 2px solid #1F4E79;
+  padding: 36px 32px;
+  margin-top: 40px;
+  background: #FFFFFF;
+}
+
+.principle-box h3 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1F4E79;
+  margin-bottom: 24px;
+}
+
+.principle-item {
+  margin-bottom: 16px;
+}
+
+.principle-item:last-child {
+  margin-bottom: 0;
+}
+
+.principle-item strong {
+  color: #1F4E79;
+}
+
+/* ── OUTCOME CARDS ── */
+.outcome-card {
+  border: 1px solid #D4D0CB;
+  border-left: 4px solid #1F4E79;
+  padding: 28px 28px 28px 32px;
+  margin-bottom: 20px;
+  background: #FFFFFF;
+}
+
+.outcome-card:last-child {
+  margin-bottom: 0;
+}
+
+.outcome-card h3 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1F4E79;
+  margin-bottom: 12px;
+}
+
+.outcome-card p {
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+.outcome-stack {
+  margin-top: 40px;
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid #D4D0CB;
+  padding: 56px 0 64px;
+}
+
+footer p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #5A5A5A;
+  margin-bottom: 12px;
+}
+
+footer a {
+  color: #1F4E79;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  nav ul {
+    gap: 20px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  .hero {
+    padding: 120px 0 64px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero .subtitle {
+    font-size: 16px;
+  }
+
+  section {
+    padding: 64px 0;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .subheading {
+    font-size: 18px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  .callout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .data-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .principle-box {
+    padding: 24px 20px;
+  }
+
+  .outcome-card {
+    padding: 24px 20px 24px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    gap: 14px;
+  }
+
+  nav a {
+    font-size: 11px;
+    letter-spacing: 0.05em;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="#problem">Problem</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#data-design">Data Design</a></li>
+    <li><a href="#outcomes">Outcomes</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <h1>Jan Soochna Portal: A Case Study in Co-Designing Government Transparency</h1>
+    <p class="subtitle">How a three-year collaboration between civil society and the Government of Rajasthan produced India's most comprehensive proactive disclosure platform, serving 230M+ citizens across 350+ welfare schemes.</p>
+    <p class="byline">Khush Vachhrajani &ensp;|&ensp; Independent Consultant &ensp;|&ensp; Governance &amp; Service Design</p>
+  </div>
+</header>
+
+<!-- SECTION 1: THE PROBLEM -->
+<section id="problem" class="section-border">
+  <div class="container">
+    <h2>The Problem</h2>
+    <p class="subheading">Citizens had legal rights to information. Government systems made it impossible to access.</p>
+
+    <p>Section 4 of India's Right to Information Act legally mandates that all public authorities proactively disclose 16 categories of information including subsidy recipients, service details, and expenditure records. A 2018 audit by the Central Information Commission found that only 4% of surveyed central authorities were complying. A separate study found that 67% of RTI applications filed by citizens were seeking information that should already have been public.</p>
+
+    <p>The consequence was not administrative. It was human.</p>
+
+    <div class="callout-grid">
+      <div class="callout-box">
+        <h3>Pensions</h3>
+        <p>In Bhim Block alone, 3,729 pensions were stopped. Over 1,000 people were incorrectly certified as dead by government systems. Many died waiting for restoration because they had no way to find out why payments stopped or who had made that decision.</p>
+      </div>
+      <div class="callout-box">
+        <h3>Healthcare</h3>
+        <p>A woman in Kaladeh was charged Rs. 15,000 by a private hospital for surgery that was free under a government insurance scheme. The hospital claimed it had not received the insurance payment. Citizens had no way to verify or dispute this without portal data.</p>
+      </div>
+      <div class="callout-box">
+        <h3>Rations</h3>
+        <p>In one panchayat in Bhilwara, a dealer recorded online that rations had been delivered. They had not been. Citizens had no evidence to prove the fraud. Over 5,300kg of grain had been siphoned off.</p>
+      </div>
+    </div>
+
+    <p class="closing-line">RTI applications were too slow. By the time information arrived, the harm was already done. The system needed real-time, transaction-level disclosure.</p>
+  </div>
+</section>
+
+<!-- SECTION 2: THE PROCESS -->
+<section id="process" class="section-border">
+  <div class="container">
+    <h2>The Process</h2>
+    <p class="subheading">Three years of structured negotiation between activists and government officials.</p>
+
+    <p>The Jan Soochna Portal did not emerge from a government IT department. It emerged from a co-design process initiated in September 2016 between the SR Abhiyan, a coalition of nearly 80 civil society organisations and unions, and the Government of Rajasthan's Department of Information Technology and Communication.</p>
+
+    <p>The core mechanism was a series of Digital Dialogues: bi-monthly structured meetings where grassroots activists and government IT officials worked through, scheme by scheme, what data existed in government systems and what should be made public.</p>
+
+    <div class="timeline">
+      <div class="timeline-step">
+        <div class="step-label">2005&ndash;2016</div>
+        <p>SR Abhiyan campaigns on right to work and right to information across Rajasthan. Yatras, public hearings, and RTI campaigns reveal systematic information gaps and their human cost.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="step-label">September 2016</div>
+        <p>First Digital Dialogue convened. Civil society forms an internal JIS Group: grassroots activists with scheme-level expertise in health, education, labour, and social security.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="step-label">2016&ndash;2019</div>
+        <p>Study phase. The JIS Group is given access to government administrator logins to see the full scope of data collected versus what was disclosed publicly. Scheme-by-scheme negotiations begin.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="step-label">Ongoing</div>
+        <p>For each of 48+ schemes, the JIS Group produces detailed format specifications: exact rows, columns, and data fields. Any government refusal to disclose requires a written justification citing the specific RTI exemption clause.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="step-label">September 13, 2019</div>
+        <p>Jan Soochna Portal launched by the Chief Minister of Rajasthan. The dialogues have continued since. The volume of schemes and information has grown significantly in the years following launch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: DATA DESIGN -->
+<section id="data-design" class="section-border">
+  <div class="container">
+    <h2>Designing the Data</h2>
+    <p class="subheading">Every format was a negotiation. Every column was a decision about whose interests the data would serve.</p>
+
+    <p>The most significant design work was not visual. It was structural. The JIS Group negotiated, scheme by scheme, not just what data would be disclosed but at what level of granularity, in what format, and organised by what geography.</p>
+
+    <div class="data-grid">
+      <div class="data-card">
+        <h3>Health Services</h3>
+        <p>Activists insisted on institutional-level disclosure rather than state-wide aggregates. Negotiated formats include medicine stock levels by clinic, functional toilets per facility, and names of beneficiaries of maternal health payments so communities can verify disbursement.</p>
+      </div>
+      <div class="data-card">
+        <h3>E-Mitra Kiosks</h3>
+        <p>To address corruption at service kiosks, the format includes the exact amount charged per transaction and the commission earned by the operator. Citizens can compare what they were asked to pay against the government record.</p>
+      </div>
+      <div class="data-card">
+        <h3>Mining</h3>
+        <p>Information is structured at the individual lease level. Formats include daily dispatch records, names and demographics of workers employed, and a log of all reported accidents and deaths at each site.</p>
+      </div>
+      <div class="data-card">
+        <h3>Ration (PDS)</h3>
+        <p>When the state moved to biometric authentication, the format was updated to show NFSA beneficiary entitlements alongside what was actually received. This allowed citizens to produce printable evidence of siphoning.</p>
+      </div>
+    </div>
+
+    <div class="principle-box">
+      <h3>Three guiding principles of format design</h3>
+      <p class="principle-item"><strong>Geographic first:</strong> Information is organised by Panchayat or Municipal Ward. A citizen selects their location and sees everything relevant to their community.</p>
+      <p class="principle-item"><strong>Transaction-level:</strong> Data is pulled in real time from the same databases used by government officials, not from static reports.</p>
+      <p class="principle-item"><strong>Actionable by design:</strong> Every row and column was tested against a single question: can this help a citizen identify a rights violation or hold a specific official accountable?</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: OUTCOMES -->
+<section id="outcomes" class="section-border">
+  <div class="container">
+    <h2>What Changed</h2>
+    <p class="subheading">Specific cases where portal data produced accountability.</p>
+
+    <p>The portal's impact is measured not in page views but in recoveries. Below are documented cases where citizens used portal data to establish and enforce their rights.</p>
+
+    <div class="outcome-stack">
+      <div class="outcome-card">
+        <h3>Rations, Bhilwara</h3>
+        <p>Citizens in Thana Panchayat used portal data showing online records of deliveries they never received. The ration dealer was suspended. Over 5,300kg of grain was recovered and distributed. A similar confrontation in Katar Panchayat resulted in the recovery of three truckloads of stolen wheat.</p>
+      </div>
+      <div class="outcome-card">
+        <h3>Health Insurance, Kaladeh</h3>
+        <p>Sohni Devi was charged Rs. 15,000 by a private hospital for surgery that should have been free. Activists used the portal to show the hospital the exact date and amount of the insurance disbursement. The hospital returned the money.</p>
+      </div>
+      <div class="outcome-card">
+        <h3>Automated Welfare, State-wide</h3>
+        <p>Portal data integration enabled policy shifts toward automation. In November 2017, over 240,000 eligible citizens were added to the National Food Security Act list with a single administrative action. In July 2018, the state used its database to automatically update records for over 900,000 pensioners to receive an increased widow pension rate, with no physical application required.</p>
+      </div>
+      <div class="outcome-card">
+        <h3>Labour Fraud, Beawar</h3>
+        <p>A social audit using portal data uncovered a Rs. 2 lakh insurance fraud. An operator had registered a deceased homemaker as a construction worker to claim a death benefit. The portal's audit trail was specific enough that the person listed as employer admitted publicly he was a tailor, not a contractor.</p>
+      </div>
+      <div class="outcome-card">
+        <h3>Water Access, Choti Kadeen</h3>
+        <p>Residents filed a water crisis complaint during the COVID-19 lockdown. When the portal showed the complaint had been marked as resolved despite no action, they used a printout of that status to file a second complaint. The District Collector ordered daily water tanker deliveries until a permanent solution was built.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>This case study was prepared by Khush Vachhrajani. The Jan Soochna Portal was co-designed with the SR Abhiyan and the Government of Rajasthan. The primer this case study draws from was authored with Nikhil Dey, Rakshita Swamy, and Vineet Bhambhu.</p>
+    <p>Contact: <a href="mailto:khushv@pm.me">khushv@pm.me</a></p>
+  </div>
+</footer>
+
+<script>
+// Highlight active nav link on scroll
+(function () {
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('nav a');
+
+  function onScroll() {
+    var scrollY = window.scrollY + 100;
+    var current = '';
+
+    for (var i = 0; i < sections.length; i++) {
+      var top = sections[i].offsetTop;
+      if (scrollY >= top) {
+        current = sections[i].getAttribute('id');
+      }
+    }
+
+    for (var j = 0; j < navLinks.length; j++) {
+      navLinks[j].style.color = '';
+      if (navLinks[j].getAttribute('href') === '#' + current) {
+        navLinks[j].style.color = '#1F4E79';
+      }
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+
+</body>
+</html>
