@@ -445,6 +445,57 @@ table tbody td {
   line-height: 1.6;
 }
 
+/* ── PORTAL CARDS ── */
+.portal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.portal-card {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #1F4E79;
+  padding: 28px 24px;
+  background: #FFFFFF;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.portal-card:hover {
+  background: #1F4E79;
+}
+
+.portal-name {
+  font-family: 'Source Serif 4', serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #1F4E79;
+  margin-bottom: 4px;
+}
+
+.portal-gov {
+  font-size: 14px;
+  color: #5A5A5A;
+  margin-bottom: 20px;
+}
+
+.portal-link {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #1F4E79;
+  margin-top: auto;
+}
+
+.portal-card:hover .portal-name,
+.portal-card:hover .portal-gov,
+.portal-card:hover .portal-link {
+  color: #FFFFFF;
+}
+
 /* ── FOOTER ── */
 footer {
   border-top: 1px solid #D4D0CB;
@@ -536,6 +587,10 @@ footer a:hover {
 
   .sub-heading {
     font-size: 21px;
+  }
+
+  .portal-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -770,6 +825,8 @@ footer a:hover {
     </div>
 
     <p class="table-caption">These formats were co-designed with civil society groups and negotiated with six state government departments during the COVID-19 lockdown in 2020.</p>
+
+    <p class="table-caption"><em>Data formats co-designed for Rajasthan, Karnataka, and Telangana are available upon request. Contact: <a href="mailto:khushv@pm.me" style="color:#1F4E79;">khushv@pm.me</a></em></p>
   </div>
 </section>
 
@@ -838,6 +895,32 @@ footer a:hover {
         <h3>Water Access, Choti Kadeen</h3>
         <p>Residents filed a water crisis complaint during the COVID-19 lockdown. When the portal showed the complaint had been marked as resolved despite no action, they used a printout of that status to file a second complaint. The District Collector ordered daily water tanker deliveries until a permanent solution was built.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE PORTALS -->
+<section id="live-portals" class="section-border">
+  <div class="container">
+    <h2>Live Portals</h2>
+    <p>This work contributed to the design and rollout of proactive disclosure portals across three Indian states.</p>
+
+    <div class="portal-grid">
+      <a class="portal-card" href="https://jansoochna.rajasthan.gov.in/" target="_blank" rel="noopener">
+        <span class="portal-name">Jan Soochna Portal</span>
+        <span class="portal-gov">Government of Rajasthan</span>
+        <span class="portal-link">Open Portal &rarr;</span>
+      </a>
+      <a class="portal-card" href="https://mahitikanaja.karnataka.gov.in/" target="_blank" rel="noopener">
+        <span class="portal-name">Mahiti Kanaja</span>
+        <span class="portal-gov">Government of Karnataka</span>
+        <span class="portal-link">Open Portal &rarr;</span>
+      </a>
+      <a class="portal-card" href="https://prajasoochana.telangana.in.net/" target="_blank" rel="noopener">
+        <span class="portal-name">Praja Soochana</span>
+        <span class="portal-gov">Government of Telangana</span>
+        <span class="portal-link">Open Portal &rarr;</span>
+      </a>
     </div>
   </div>
 </section>
