@@ -74,7 +74,7 @@ section {
 
 /* ── HERO ── */
 .hero {
-  padding: 160px 0 96px;
+  padding: 140px 0 64px;
   border-bottom: 1px solid #D4D0CB;
 }
 
@@ -96,12 +96,38 @@ section {
   max-width: 740px;
 }
 
-.hero .byline {
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+
+
+
+/* ── HERO STATS ── */
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid #D4D0CB;
+}
+
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-stat-number {
+  font-family: 'Source Serif 4', serif;
+  font-size: 32px;
+  font-weight: 700;
   color: #1F4E79;
+  line-height: 1.1;
+}
+
+.hero-stat-label {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  color: #5A5A5A;
+  margin-top: 4px;
 }
 
 /* ── SECTIONS ── */
@@ -336,6 +362,53 @@ p {
   font-size: 15px;
   line-height: 1.7;
   margin-bottom: 0;
+}
+
+/* ── ROLE CALLOUT ── */
+.role-callout {
+  border-left: 4px solid #1F4E79;
+  background: #F0EFED;
+  padding: 24px 28px;
+  margin-bottom: 28px;
+}
+
+.role-callout p {
+  font-family: 'Source Serif 4', serif;
+  font-size: 19px;
+  line-height: 1.6;
+  color: #1A1A1A;
+  margin-bottom: 0;
+}
+
+/* ── ROLE AREA DIVIDERS ── */
+.role-area {
+  padding-bottom: 28px;
+  border-bottom: 1px solid #D4D0CB;
+}
+
+.role-area-full {
+  margin: 8px 0 40px;
+  padding-top: 4px;
+}
+
+.role-area-full p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 4px;
+}
+
+.role-request-link {
+  font-weight: 600;
+  color: #1F4E79;
+}
+
+.role-request-link a {
+  color: #1F4E79;
+  text-decoration: none;
+}
+
+.role-request-link a:hover {
+  text-decoration: underline;
 }
 
 /* ── QUESTIONS CALLOUT ── */
@@ -577,7 +650,7 @@ footer a:hover {
   }
 
   .hero {
-    padding: 120px 0 64px;
+    padding: 100px 0 48px;
   }
 
   .hero h1 {
@@ -586,6 +659,23 @@ footer a:hover {
 
   .hero .subtitle {
     font-size: 16px;
+  }
+
+  .hero-stats {
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .hero-stat-number {
+    font-size: 24px;
+  }
+
+  .role-callout {
+    padding: 20px 22px;
+  }
+
+  .role-callout p {
+    font-size: 17px;
   }
 
   section {
@@ -676,10 +766,10 @@ footer a:hover {
 
 <nav>
   <ul>
-    <li><a href="#problem">Problem</a></li>
-    <li><a href="#process">Process</a></li>
+    <li><a href="#overview">Overview</a></li>
     <li><a href="#my-role">My Role</a></li>
-    <li><a href="#data-design">Data Design</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#design-decisions">Design Decisions</a></li>
     <li><a href="#outcomes">Outcomes</a></li>
   </ul>
 </nav>
@@ -688,13 +778,18 @@ footer a:hover {
 <header class="hero">
   <div class="container">
     <h1>Jan Soochna Portal: A Case Study in Co-Designing Government Transparency</h1>
-    <p class="subtitle">How a three-year collaboration between civil society and the Government of Rajasthan produced India's most comprehensive proactive disclosure platform, serving 230M+ citizens across 350+ welfare schemes.</p>
-    <p class="byline">Khush Vachhrajani &ensp;|&ensp; Independent Consultant &ensp;|&ensp; Governance &amp; Service Design</p>
+    <p class="subtitle">A five-year case study in co-designing government transparency infrastructure with the Government of Rajasthan, civil society coalitions, and marginalised communities. Led by Khush Vachhrajani, Independent Consultant.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="hero-stat-number">230M+</span><span class="hero-stat-label">Citizens</span></div>
+      <div class="hero-stat"><span class="hero-stat-number">353</span><span class="hero-stat-label">Schemes</span></div>
+      <div class="hero-stat"><span class="hero-stat-number">117</span><span class="hero-stat-label">Departments</span></div>
+      <div class="hero-stat"><span class="hero-stat-number">3</span><span class="hero-stat-label">States</span></div>
+    </div>
   </div>
 </header>
 
-<!-- SECTION 1: THE PROBLEM -->
-<section id="problem" class="section-border">
+<!-- SECTION 1: OVERVIEW -->
+<section id="overview" class="section-border">
   <div class="container">
     <h2>The Problem</h2>
     <p class="subheading">Citizens had legal rights to information. Government systems made it impossible to access.</p>
@@ -722,46 +817,15 @@ footer a:hover {
   </div>
 </section>
 
-<!-- SECTION 2: THE PROCESS -->
-<section id="process" class="section-border">
-  <div class="container">
-    <h2>The Process</h2>
-    <p class="subheading">Three years of structured negotiation between activists and government officials.</p>
-
-    <p>The Jan Soochna Portal did not emerge from a government IT department. It emerged from a co-design process initiated in September 2016 between the SR Abhiyan, a coalition of nearly 80 civil society organisations and unions, and the Government of Rajasthan's Department of Information Technology and Communication.</p>
-
-    <p>The core mechanism was a series of Digital Dialogues: bi-monthly structured meetings where grassroots activists and government IT officials worked through, scheme by scheme, what data existed in government systems and what should be made public.</p>
-
-    <div class="timeline">
-      <div class="timeline-step">
-        <div class="step-label">2005&ndash;2016</div>
-        <p>SR Abhiyan campaigns on right to work and right to information across Rajasthan. Yatras, public hearings, and RTI campaigns reveal systematic information gaps and their human cost.</p>
-      </div>
-      <div class="timeline-step">
-        <div class="step-label">September 2016</div>
-        <p>First Digital Dialogue convened. Civil society forms an internal JIS Group: grassroots activists with scheme-level expertise in health, education, labour, and social security.</p>
-      </div>
-      <div class="timeline-step">
-        <div class="step-label">2016&ndash;2019</div>
-        <p>Study phase. The JIS Group is given access to government administrator logins to see the full scope of data collected versus what was disclosed publicly. Scheme-by-scheme negotiations begin.</p>
-      </div>
-      <div class="timeline-step">
-        <div class="step-label">Ongoing</div>
-        <p>For each of 48+ schemes, the JIS Group produces detailed format specifications: exact rows, columns, and data fields. Any government refusal to disclose requires a written justification citing the specific RTI exemption clause.</p>
-      </div>
-      <div class="timeline-step">
-        <div class="step-label">September 13, 2019</div>
-        <p>Jan Soochna Portal launched by the Chief Minister of Rajasthan. The dialogues have continued since. The volume of schemes and information has grown significantly in the years following launch.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- SECTION: MY ROLE -->
 <section id="my-role" class="section-border">
   <div class="container">
     <h2>My Role in This Work</h2>
     <p class="subheading">Phase 2: expanding the portal from 21 schemes to hundreds, and taking disclosure into communities.</p>
+
+    <div class="role-callout">
+      <p>I joined Phase 2 of this work in July 2020 as the person responsible for expanding the portal from 21 schemes to its current scale, co-designing disclosure formats, facilitating government-civil society negotiations, and closing the feedback loop between communities and the platform.</p>
+    </div>
 
     <p>I joined this work in July 2020 as my first assignment after completing my Master of Public Affairs at Brown University. The portal had launched in September 2019 with 21 schemes. My role in Phase 2 was to expand and deepen it: coordinating between civil society JIS teams and government departments, co-designing data formats for new disclosure areas, convening and facilitating Digital Dialogues, and designing the approaches to take information disclosed on the portal into communities and bring their feedback and grievances back into the design process.</p>
 
@@ -786,6 +850,11 @@ footer a:hover {
       </div>
     </div>
 
+    <div class="role-area-full">
+      <p>Design artifacts from this work, including data format templates for Rajasthan, Karnataka, and Telangana, are available on request. These formats cover social security pensions, COVID relief, construction workers, mining, rations, health services, and grievance redress systems.</p>
+      <p class="role-request-link">Request formats: <a href="mailto:khushv@pm.me">khushv@pm.me</a></p>
+    </div>
+
     <div class="questions-box">
       <h3>Three questions that anchored every negotiation</h3>
       <ol>
@@ -800,6 +869,8 @@ footer a:hover {
     <p>During the COVID-19 lockdown, I led the co-design of disclosure formats for three channels of state relief: cash transfers to families who lost earning members to COVID-19, dry ration distribution through Anganwadis and schools, and cash transfers to informal workers including street vendors, construction workers, and rickshaw drivers who lost livelihoods during the lockdown.</p>
 
     <p>The first step was forming a JIS team of civil society volunteers working across these three areas. Together, we met with six line departments including Finance, Labour Welfare, Food and Civil Supplies, Women and Child Development, Education, and Local Self Government to map their existing data systems: what was digitised, to what granularity, and how frequently it was updated.</p>
+
+    <p>The following formats were produced by me and the JIS team during the COVID-19 lockdown in 2020, after mapping the data systems of six state departments. Each column heading was negotiated. The government's primary concern was political sensitivity around COVID deaths and livelihood collapse during lockdown. These formats represent the agreed output of those negotiations.</p>
 
     <p>The formats below were the output of that process. Each column was negotiated. The government's primary resistance was political: COVID deaths, hunger, and livelihood collapse were sensitive. I anchored those negotiations. The government eventually not only disclosed the requested information but created a dedicated grievance workflow for COVID-related complaints arising from the disclosure. A helpline ran for one year from the date the information went live.</p>
 
@@ -884,15 +955,51 @@ footer a:hover {
 
     <p class="table-caption">These formats were co-designed with civil society groups and negotiated with six state government departments during the COVID-19 lockdown in 2020.</p>
 
-    <p class="table-caption"><em>Data formats co-designed for Rajasthan, Karnataka, and Telangana are available upon request. Contact: <a href="mailto:khushv@pm.me" style="color:#1F4E79;">khushv@pm.me</a></em></p>
   </div>
 </section>
 
-<!-- SECTION 3: DATA DESIGN -->
-<section id="data-design" class="section-border">
+<!-- SECTION 2: THE PROCESS -->
+<section id="process" class="section-border">
   <div class="container">
-    <h2>Designing the Data</h2>
+    <h2>The Process</h2>
+    <p class="subheading">Three years of structured negotiation between activists and government officials.</p>
+
+    <p>The Jan Soochna Portal did not emerge from a government IT department. It emerged from a co-design process initiated in September 2016 between the SR Abhiyan, a coalition of nearly 80 civil society organisations and unions, and the Government of Rajasthan's Department of Information Technology and Communication.</p>
+
+    <p>The core mechanism was a series of Digital Dialogues: bi-monthly structured meetings where grassroots activists and government IT officials worked through, scheme by scheme, what data existed in government systems and what should be made public.</p>
+
+    <div class="timeline">
+      <div class="timeline-step">
+        <div class="step-label">2005&ndash;2016</div>
+        <p>SR Abhiyan campaigns on right to work and right to information across Rajasthan. Yatras, public hearings, and RTI campaigns reveal systematic information gaps and their human cost.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="step-label">September 2016</div>
+        <p>First Digital Dialogue convened. Civil society forms an internal JIS Group: grassroots activists with scheme-level expertise in health, education, labour, and social security.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="step-label">2016&ndash;2019</div>
+        <p>Study phase. The JIS Group is given access to government administrator logins to see the full scope of data collected versus what was disclosed publicly. Scheme-by-scheme negotiations begin.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="step-label">Ongoing</div>
+        <p>For each of 48+ schemes, the JIS Group produces detailed format specifications: exact rows, columns, and data fields. Any government refusal to disclose requires a written justification citing the specific RTI exemption clause.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="step-label">September 13, 2019</div>
+        <p>Jan Soochna Portal launched by the Chief Minister of Rajasthan. The dialogues have continued since. The volume of schemes and information has grown significantly in the years following launch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: DESIGN DECISIONS -->
+<section id="design-decisions" class="section-border">
+  <div class="container">
+    <h2>Design Decisions</h2>
     <p class="subheading">Every format was a negotiation. Every column was a decision about whose interests the data would serve.</p>
+
+    <p>Every format on the portal is the result of a specific design decision: a negotiation between what government systems produced and what citizens needed to be able to act. Below are four examples of that decision-making process, showing the initial state, the push-back, and the final result.</p>
 
     <p>The most significant design work was not visual. It was structural. The JIS Group negotiated, scheme by scheme, not just what data would be disclosed but at what level of granularity, in what format, and organised by what geography.</p>
 
@@ -957,6 +1064,8 @@ footer a:hover {
     <h2>What Changed</h2>
     <p class="subheading">Specific cases where portal data produced accountability.</p>
 
+    <p>These outcomes were made possible because the information was disclosed in a format that citizens could use as evidence. The design decision to go transaction-level and individual-level rather than aggregate is what enabled each of these cases.</p>
+
     <p>The portal's impact is measured not in page views but in recoveries. Below are documented cases where citizens used portal data to establish and enforce their rights.</p>
 
     <div class="outcome-stack">
@@ -1013,6 +1122,7 @@ footer a:hover {
 <!-- FOOTER -->
 <footer>
   <div class="container">
+    <p>This work is one part of a broader practice in governance service design. See also: Integrated Public Grievance Redress System [link to be added].</p>
     <p>This case study was prepared by Khush Vachhrajani. The Jan Soochna Portal was co-designed with the SR Abhiyan and the Government of Rajasthan. The primer this case study draws from was authored with Nikhil Dey, Rakshita Swamy, and Vineet Bhambhu.</p>
     <p>Contact: <a href="mailto:khushv@pm.me">khushv@pm.me</a></p>
   </div>
